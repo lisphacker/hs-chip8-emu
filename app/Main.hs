@@ -1,7 +1,7 @@
 module Main where
 
 import Protolude
-import Lib
+import CHIP8
 
 main :: IO ()
 main = someFunc
