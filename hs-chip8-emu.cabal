@@ -1,0 +1,49 @@
+name:                hs-chip8-emu
+version:             0.1.0.0
+-- synopsis:
+-- description:
+homepage:            https://github.com/lisphacker/hs-chip8-emu#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Gautham Ganapathy
+maintainer:          gauthamg@gmail.com
+copyright:           (c) Gautham Ganapathy, 2018
+category:            Compilers/Interpreters
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  ghc-options:         -Wall
+  exposed-modules:     Lib
+  other-modules:       Lib.Prelude
+  build-depends:       base >= 4.7 && < 5
+                     , protolude >= 0.2.2
+  default-language:    Haskell2010
+  default-extensions:  OverloadedStrings, NoImplicitPrelude
+
+executable hs-chip8-emu
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  ghc-options:         -Wall -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , hs-chip8-emu
+                     , protolude >= 0.2.2
+  default-language:    Haskell2010
+  default-extensions:  OverloadedStrings, NoImplicitPrelude
+
+test-suite hs-chip8-emu-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+                     , hs-chip8-emu
+                     , protolude >= 0.2.2
+  ghc-options:         -Wall -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+  default-extensions:  OverloadedStrings, NoImplicitPrelude
+
+source-repository head
+  type:     git
+  location: https://github.com/lisphacker/hs-chip8-emu
