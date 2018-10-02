@@ -1,10 +1,7 @@
 {-|
 Module      : CHIP8
-Description : Lib's main module
+Description : CHIP8's main module
 
-This is a haddock comment describing your library
-For more information on how to write Haddock comments check the user guide:
-<https://www.haskell.org/haddock/doc/html/index.html>
 -}
 module CHIP8
     ( someFunc
